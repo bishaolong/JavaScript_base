@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>循环嵌套循环</title>
+	</head>
+	<body>
+		<script>
+			
+			for(var a=1;a<=5;a++){
+				for(var b=1;b<=10;b++){
+					document.write(b);
+					// document.write('<br>');
+				}
+			}
+			
+			for(var aa=1;aa<=5;aa++){
+				for(var bb=1;bb<=aa;bb++){
+					document.write(bb);
+					document.write('<br>');
+				}
+			}
+			
+			// 练习1
+			for(var c=10;c>=5;c--){
+				for(var d=c;c>5;c--){
+					document.write(c);
+					// document.write('<br>');
+				}
+			}
+			
+			// 练习2
+			for(var i=10;i>=5;i--){
+				for(var j=i;j>5;j--){
+					document.write(j);
+					document.write('<br>');
+				}
+			}
+			
+			// 练习3
+			for(var i=1;i<=5;i++){
+				for(var j=1;j<i;j++){
+					document.write(i*j);
+					// document.write('<br>');
+				}
+			}
+			
+			// 练习4
+			for(var i=1;i<=5;i++){
+				if(i%2==0){
+					continue;
+				}
+				for(var j=1;j<i;j++){
+					document.write(j);
+					document.write('<br>');
+				}
+			}
+			
+			// 练习5
+			for(var i=1;i<=5;i++){
+				if(i%2==0){
+					break;
+				}
+				for(var j=1;j<i;j++){
+					document.write(j);
+					// document.write('<br>');
+				}
+			}
+			
+			// 练习6
+			/*
+			
+			*
+			* *
+			* *	*
+			* * * *
+			* * *
+			* *
+			* 
+			
+			*/	
+		   
+		   for(var x=1;x<5;x++){
+			   for(var z=1; z<=x; z++){
+				   document.write('*');
+			   }
+			   document.write('<br/>');
+		   }
+			   	
+			for(var x=5;x>=1;x--){
+			   for(var z=1; z<=x; z++){
+				   document.write('*');
+			   }
+			   document.write('<br/>');
+			}   
+			
+			/*
+			   
+				*
+			   * *
+			  * * *
+			 * * * *
+			  * * *
+			   * *
+			    *
+			
+			*/
+		   
+		   for(var m=1;m<5;m++){
+			   for(var n=4; n>=m; n--){
+				   document.write('&nbsp;');
+			   }
+			   for(var v=1; v<=2*m-1; v++){
+				   document.write('*');
+			   }
+			   document.write("<br>");  
+		   }
+		   for(var m=5;m>=1;m--){
+			   for(var n=4; n>=m; n--){
+					document.write('&nbsp;&nbsp;');
+			   }
+			   for(var v=1; v<=2*m-1; v++){
+			   		 document.write('*');
+			   }
+			   document.write("<br>"); 
+		   }
+			
+		
+			
+			// 乘法表
+			document.write('<table border="1";>')
+			
+			for(var i=1;i<=9;i++){
+				document.write('<tr>');
+				
+				for(var j=1; j<=i; j++){
+					
+					document.write('<td style="text-align: center;">');
+					
+						var str=j +'x'+ i +'='+ (j*i);
+						document.write(str);
+						
+					document.write('</td>');
+				}
+				document.write('<br>');
+
+				document.write('</tr>');
+			}
+			
+			document.write('</table>');
+			
+			document.write("<br>"); 
+			document.write("<br>"); 
+			
+			
+			//1-100累加
+			var he=0;
+			for(var x=1; x<=100; x++){
+				he=he+x;
+			}
+			document.write(he);
+			
+			
+			document.write("<br>"); 
+			document.write("<br>"); 
+			
+			//有一分数序列  1/2,1/4,1/6,1/8... 求此数列前100项的和
+			
+			var zong =0;
+			for(var o=1,x=1,y=2;o<=100;o++) {
+				zong+=x/y;
+				y+=2;
+			}
+			document.write(zong);
+			
+			document.write("<br>");
+			
+			
+			//港蛋的方法
+			var jisuan = 0;
+			for (var i = 1; i <= 100; i++) {
+			// var c2jisuan = i * 2;
+			// jisuan += 1 / c2jisuan;
+			jisuan += 1 / (i * 2);
+			}
+			document.write(jisuan + "<br>");
+
+			//李莹莹的方法
+			var a = 1;
+			var b = 2;
+			var sum = 0;
+			for (var i = 1; i <= 100; i++) {
+			sum = sum + 1 / (i * b);
+			}
+			document.write(sum);
+
+			
+		</script>
+		
+		<div>
+			<ul>
+				<li><a href="demo01.html">demo01</a></li>
+				<li><a href="demo02.html">demo02</a></li>
+				<li><a href="demo03.html">demo03</a></li>
+				<li><a href="demo04.html">demo04</a></li>
+				<li><a href="demo05.html">demo05</a></li>
+				<li><a href="demo06.html">demo06</a></li>
+				<li><a href="demo07.html">demo07</a></li>
+				<li><a href="demo08.html">demo08</a></li>
+				<li><a href="demo09.html">demo09</a></li>
+				<li><a href="demo10.html">demo10</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>函数 斐波那契数列</title>
+</head>
+<body>
+	<input type="button" value="跳转到百度" id="btngo">
+	<script>
+		var btngo=document.getElementById("btngo");
+		btngo.onclick=function(){
+			window.open("http://www.baidu.com");
+		}
+		
+		document.write('<br>');
+		document.write('<br>');
+		
+		
+		//黄金分割数列  斐波那契数列
+		// 1 1 2 3 5 8 13 21...
+		
+		
+		// var qian1=1,qian2=1;
+		// var n=9,nzhi;   //n 可以修改
+		// if(n==1||n==2){
+		// 	nzhi=1;
+		// }else{
+		// 	for(var i=3; i<=n;i++){
+		// 		nzhi=qian1+qian2;
+		// 		qian2=qian1;
+		// 		qian1=nzhi;
+		// 	}
+		// }
+		// document.write(nzhi);
+		
+		function shulie(n){
+			var qian1=1,qian2=1,nzhi;
+			if(n==1||n==2){
+				nzhi=1;
+			}
+			else{
+				for(var i=3; i<=n;i++){
+					nzhi=qian1+qian2;
+					qian2=qian1;
+					qian1=nzhi;
+				}
+			}
+			return nzhi;
+		}
+		
+		var result=shulie(100);
+		document.write(result);
+		
+		document.write('<br>');
+		document.write('<br>');
+		
+		//判断一个数是否为质数 (只能被1和它本身整除的数 如2 3 5)
+		
+		var zhishu=4;
+		if(zhishu<=1){
+			document.write('不是质数');
+		}else if(zhishu==2){
+			document.write('质数');
+		}
+		else if(zhishu>=2){
+			for(var i=2;i<zhishu;i++){
+				// 只要有能除尽的 就不是质数 
+				if(zhishu%i==0){
+					document.write('不是质数');
+					break;
+				}
+				else{
+					document.write('质数');
+					break;
+				}
+			}
+		}
+		
+		document.write('<br>');
+		document.write('<br>');
+			
+		//输出1-n之间所有的质数
+		
+		for(var a=1;a<=100;a++){
+			for(var b=2;b<=a;b++){
+				if(a%b==0 && a!=b){
+					break;
+				}
+				else if(a==b){
+					document.write(a+'.');
+				}
+			}
+		}
+		
+		document.write('<br>');
+		document.write('<br>');
+	
+		
+		//判断年份是否为闰年(能被4整除 不能被100整除 2004)
+		
+		var nian=2003;
+		if(nian%4==0 && nian%100!=0 || nian%400==0){
+			document.write('润年');
+		}
+		else{
+			document.write('平年');
+		}
+		
+		//计算器
+		
+
+	</script>
+	
+	<div>
+		<ul>
+			<li><a href="demo01.html">demo01</a></li>
+			<li><a href="demo02.html">demo02</a></li>
+			<li><a href="demo03.html">demo03</a></li>
+			<li><a href="demo04.html">demo04</a></li>
+			<li><a href="demo05.html">demo05</a></li>
+			<li><a href="demo06.html">demo06</a></li>
+			<li><a href="demo07.html">demo07</a></li>
+			<li><a href="demo08.html">demo08</a></li>
+			<li><a href="demo09.html">demo09</a></li>
+			<li><a href="demo10.html">demo10</a></li>
+		</ul>
+	</div>
+	
+</body>
+</html>		

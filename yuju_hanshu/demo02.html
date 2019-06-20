@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>成绩查询&点击变色</title>
+	</head>
+	<body id="mybody">
+		<input type="text" value="" placeholder="请输入您的成绩" id="txtchengji">
+		<input type="button" value="评测" id="btnpingce">
+		 <input type="button" value="变色" id="bianse">  <!-- 变色 -->
+		<div id="xianshi"></div>
+	
+		<script type="text/javascript">
+			// 成绩查询
+			var txtchengji=document.getElementById("txtchengji");
+			var btnpingce=document.getElementById("btnpingce");
+			var xianshi=document.getElementById("xianshi");
+			
+			var anniu=document.getElementById("bianse"); // 变色
+			
+			btnpingce.onclick=function(){
+				var chengji=parseFloat(txtchengji.value);
+				if(isNaN(chengji)||chengji>110||chengji<0){
+					xianshi.innerHTML="<span style='color:red;font-size:32px;'>格式错误！</span>";
+				}
+				else if(chengji<60){
+					xianshi.innerHTML="<span style='color:red;'>不及格！</span>";
+				}
+				else if(chengji<80){
+					xianshi.innerHTML="<span style='color:green;'>及格！</span>";
+				}
+				else if(chengji<90){
+					xianshi.innerHTML="<span style='color:green;'>优秀！</span>";
+				}
+				else{
+					xianshi.innerHTML="<span style='color:green;font-size:32px;'>你是最棒的！</span>";
+				}	
+			}
+			
+			// 第一次 红 橙 黄 绿 青 蓝 紫
+			var i=0;
+			anniu.onclick=function(){
+				if(i==0){
+					mybody.style="background-color:red;";
+					anniu.style="color:red";
+					i=1;
+				}
+				else if(i==1){
+					mybody.style="background-color:orange;";
+					anniu.style="color:orange";
+					i=2;
+				}
+				else if(i==2){
+					mybody.style="background-color:yellow;";
+					anniu.style="color:yellow";
+					i=3;
+				}
+				else if(i==3){
+					mybody.style="background-color:green;";
+					anniu.style="color:green";
+					i=4;
+				}
+				else if(i==4){
+					mybody.style="background-color:cyan;";
+					anniu.style="color:cyan";
+					i=5;
+				}
+				else if(i==5){
+					mybody.style="background-color:blue;";
+					anniu.style="color:blue";
+					i=6;
+				}
+				else if(i==6){
+					mybody.style="background-color:purple;";
+					anniu.style="color:purple";
+					i=0;
+				}
+			}
+			
+			
+		</script>
+		
+		<div>
+			<ul>
+				<li><a href="demo01.html">demo01</a></li>
+				<li><a href="demo02.html">demo02</a></li>
+				<li><a href="demo03.html">demo03</a></li>
+				<li><a href="demo04.html">demo04</a></li>
+				<li><a href="demo05.html">demo05</a></li>
+				<li><a href="demo06.html">demo06</a></li>
+				<li><a href="demo07.html">demo07</a></li>
+				<li><a href="demo08.html">demo08</a></li>
+				<li><a href="demo09.html">demo09</a></li>
+				<li><a href="demo10.html">demo10</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

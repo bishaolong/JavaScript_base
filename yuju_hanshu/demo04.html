@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>车辆限行</title>
+	</head>
+	<body>
+		<input type="text" value="" id="chepai" placeholder="请输入7位车牌号">
+		<input type="button" id="chaxun" value="查询">
+		<div id="xianshi" style="width:100px;height: 50px; background: gold;"></div>
+		
+		<script>
+			// 05 16 27 38 49
+			var chepai=document.getElementById("chepai");
+			var chaxun=document.getElementById("chaxun");
+			var xianshi=document.getElementById("xianshi");
+			
+			// var haoma='1234505';
+			// var weishu=haoma.substr(5,2);
+			// console.log(weishu);
+			
+			chaxun.onclick=function(){
+				var haoma=chepai.value;
+				var weishu=haoma.substr(5,2);
+				if(weishu==05){
+					xianshi.innerHTML='<span>周一限行</span>';
+				}
+				else if(weishu==16){
+					xianshi.innerHTML='<span>周二限行</span>';
+				}
+				else if(weishu==27){
+					xianshi.innerHTML='<span>周三限行</span>';
+				}
+				else if(weishu==38){
+					xianshi.innerHTML='<span>周四限行</span>';
+				}
+				else if(weishu==49){
+					xianshi.innerHTML='<span>周五限行</span>';
+				}
+				else{
+					xianshi.innerHTML='<span>周六、周日限行</span>';
+				}
+				
+
+			}
+
+		</script>
+		
+		<div>
+			<ul>
+				<li><a href="demo01.html">demo01</a></li>
+				<li><a href="demo02.html">demo02</a></li>
+				<li><a href="demo03.html">demo03</a></li>
+				<li><a href="demo04.html">demo04</a></li>
+				<li><a href="demo05.html">demo05</a></li>
+				<li><a href="demo06.html">demo06</a></li>
+				<li><a href="demo07.html">demo07</a></li>
+				<li><a href="demo08.html">demo08</a></li>
+				<li><a href="demo09.html">demo09</a></li>
+				<li><a href="demo10.html">demo10</a></li>
+			</ul>
+		</div>
+		
+	</body>
+</html>

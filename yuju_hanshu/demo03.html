@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>switch语句</title>
+	</head>
+	<body>
+		<input type="text" value="" id="yuefen" placeholder="请输入月份">
+		<input type="button" id="btnanniu" value="点击">
+		<div id="xianshi" style="background: orange;width: 100px;height: 50px;"></div>
+		<div id="xianshi2" style="background: #ccc;width: 100px;height: 50px;"></div>
+		<script>
+			var yuefen=document.getElementById("yuefen");
+			var btnanniu=document.getElementById("btnanniu");
+			var xianshi=document.getElementById("xianshi");
+			var xianshi2=document.getElementById("xianshi2");
+			
+			btnanniu.onclick=function(){
+				var month=parseFloat(yuefen.value);
+				if(month>=3&&month<=5){
+					xianshi.innerHTML='<span>春天</span>';
+				}
+				else if(month>=6&&month<=8){
+					xianshi.innerHTML='<span>夏天</span>';
+				}
+				else if(month>=9&&month<=11){
+					xianshi.innerHTML='<span>秋天</span>';
+				}
+				else if(month==12||(month<=2&&month!=0)){
+					xianshi.innerHTML='<span>冬天</span>';
+				}
+				else{
+					xianshi.innerHTML='<span>格式错误！</span>';
+				}
+				
+				
+				// switch语句
+				switch(month){
+					case 3:
+					case 4:
+					case 5:
+					{xianshi2.innerHTML='<span>春天</span>';break;}
+					case 6:
+					case 7:
+					case 8:
+					{xianshi2.innerHTML='<span>夏天</span>';break;}
+					case 9:
+					case 10:
+					case 11:
+					{xianshi2.innerHTML='<span>秋天</span>';break;}
+					case 12:
+					case 1:
+					case 2:
+					{xianshi2.innerHTML='<span>冬天</span>';break;}
+					
+					default:{
+						xianshi2.innerHTML='<span>格式错误！</span>';
+						break;
+					}
+					
+					
+				}	
+
+			}
+			
+		</script>
+		
+		<div>
+			<ul>
+				<li><a href="demo01.html">demo01</a></li>
+				<li><a href="demo02.html">demo02</a></li>
+				<li><a href="demo03.html">demo03</a></li>
+				<li><a href="demo04.html">demo04</a></li>
+				<li><a href="demo05.html">demo05</a></li>
+				<li><a href="demo06.html">demo06</a></li>
+				<li><a href="demo07.html">demo07</a></li>
+				<li><a href="demo08.html">demo08</a></li>
+				<li><a href="demo09.html">demo09</a></li>
+				<li><a href="demo10.html">demo10</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

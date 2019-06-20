@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>计算器</title>
+		<style>
+			.tb{
+				width: 500px;
+				margin: 20px auto;
+				border:1px solid #ccc;
+				border-collapse: collapse;
+				text-align: center;
+				background: cadetblue;
+			}
+			#textwbk{
+				width: 90%;
+				height: 50px;
+				text-align: right;
+				font-size: 40px;
+				line-height: 50px;
+			}
+			input[type=button]{
+				width: 80px;
+				height: 50px;
+				font-size: 20px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<table border="1" class="tb">
+			<tr>
+				<td colspan="4"><input type="text" name="" id="textwbk" value="0" /></td>
+			</tr>
+			<tr>
+				<td><input type="button" name="" id="" value="" /></td>
+				<td><input type="button" name="" id="Huitui" value="退格" /></td>
+				<td><input type="button" name="" id="qingping" value="清屏" /></td>
+				<td><input class="btnysf" type="button" name="" id="" value="/" /></td>
+			</tr>
+			<tr>
+				<td><input class="number" type="button" name="" id="" value="7" /></td>
+				<td><input class="number" type="button" name="" id="" value="8" /></td>
+				<td><input class="number" type="button" name="" id="" value="9" /></td>
+				<td><input class="btnysf" type="button" name="" id="" value="x" /></td>
+			</tr>
+			<tr>
+				<td><input class="number" type="button" name="" id="" value="4" /></td>
+				<td><input class="number" type="button" name="" id="" value="5" /></td>
+				<td><input class="number" type="button" name="" id="" value="6" /></td>
+				<td><input class="btnysf" type="button" name="" id="" value="-" /></td>
+			</tr>
+			<tr>
+				<td><input class="number" type="button" name="" id="" value="1" /></td>
+				<td><input class="number" type="button" name="" id="" value="2" /></td>
+				<td><input class="number" type="button" name="" id="" value="3" /></td>
+				<td><input class="btnysf" type="button" name="" id="" value="+" /></td>
+			</tr>
+			<tr>
+				<td><input class="number" type="button" name="" id="" value="0" /></td>
+				<td><input type="button" name="" id="Dian" value="." /></td>
+				<td><input type="button" name="" id="" value="+/-" /></td>
+				<td><input type="button" name="" id="Dengyu" value="=" /></td>
+			</tr>
+		</table>
+		
+		<script type="text/javascript">
+			var textwbk=document.getElementById("textwbk"); // 文本框
+			var Qingping=document.getElementById("qingping"); // 获取清屏按钮
+			var Dengyu=document.getElementById("Dengyu"); //获取 = 按钮
+			var Huitui=document.getElementById("Huitui"); //获取 回退 按钮
+			var Dian=document.getElementById("Dian"); //获取 . 按钮
+			var btnNums=document.getElementsByClassName("number"); // 数字按钮
+			var btnysf=document.getElementsByClassName("btnysf");//获取 + - * / 运算符
+			var geshu=btnNums.length;	//获取按钮的个数
+			var temp="";	// 存 点击 按钮的值
+			var temp1=temp.length;	//获取 存入 temp的个数
+			var no1Num=0;	//第一次点击的数
+			var no2Num=0;   //第二次点击的数
+			var yunsuanfu;	//声明当前点击的运算符
+			
+			//循环按钮的个数
+			for(var i=0;i<geshu;i++){
+				//获取具体第几个按钮
+				btnNums[i].onclick=function(){
+					temp=temp+this.value; //temp当前值
+					textwbk.value=temp; //获取按钮上的值 赋给 文本框
+				} 
+
+			}
+			
+			//清屏
+			Qingping.onclick=function(){
+				textwbk.value='0'; //文本框显示0
+				temp="";  //清空temp内存里的值
+			}
+			
+			//回退
+			
+			Huitui.onclick=function(){
+				// temp=temp-temp[temp.length-1];
+				// temp=temp.toString().length-1;
+				temp=temp.substr(0,temp.length-1);   
+				console.log(temp);
+				textwbk.value=temp;
+			}
+			
+			 
+			//+ - * / 运算符
+			var l=btnysf.length; //获取 运算符的个数
+			for(var j=0;j<l;j++){
+				btnysf[j].onclick=function(){
+					yunsuanfu=this.value; //存 当前点击的 运算符 + - * /
+					no1Num=parseInt(temp,10); //第一次输入的数 存到no1Num里
+					temp=""; //清空temp中的值
+				}
+			}
+			
+			//= 等于
+			Dengyu.onclick=function(){
+				no2Num=parseInt(temp,10); //第二次输入的数 存到no2Num里
+				temp=""; //清空temp中的值
+				
+				//做运算
+				if(yunsuanfu=="+"){
+					textwbk.value=no1Num+no2Num;
+				}
+				else if(yunsuanfu=="-"){
+					textwbk.value=no1Num-no2Num;
+				}
+				else if(yunsuanfu=="x"){
+					textwbk.value=no1Num*no2Num;
+				}
+				else if(yunsuanfu=="/"){
+					textwbk.value=no1Num/no2Num;
+				}
+			}
+			
+		</script>
+		
+		<div>
+			<ul>
+				<li><a href="demo01.html">demo01</a></li>
+				<li><a href="demo02.html">demo02</a></li>
+				<li><a href="demo03.html">demo03</a></li>
+				<li><a href="demo04.html">demo04</a></li>
+				<li><a href="demo05.html">demo05</a></li>
+				<li><a href="demo06.html">demo06</a></li>
+				<li><a href="demo07.html">demo07</a></li>
+				<li><a href="demo08.html">demo08</a></li>
+				<li><a href="demo09.html">demo09</a></li>
+				<li><a href="demo10.html">demo10</a></li>
+			</ul>
+		</div>
+	</body>
+</html>
